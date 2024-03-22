@@ -5,6 +5,7 @@ const csrf = require('csurf')
 const cookieParser = require('cookie-parser')
 const userController = require('./controllers/userController')
 const authController = require('./controllers/authController')
+const appointmentsController = require('./controllers/appointmentsController')
 
 // CONFIGURATION
 const app = express()
@@ -29,6 +30,7 @@ app.use((req, res, next) => {
 
 app.use('/api/users', userController)
 app.use('/api/auth', authController)
+app.use('/api/appointments', appointmentsController)
 
 // ROUTES
 app.get('/', (req, res) => {

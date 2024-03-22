@@ -2,6 +2,7 @@ const express = require("express");
 const appointments = express.Router();
 const { getAllAppointments, getAppointment, createAppointment, deleteAppointment, updateAppointment } = require('../queries/appointments');
 
+
 // INDEX
 appointments.get('/', async (_req, res) => {
   try {

@@ -3,10 +3,9 @@ DROP DATABASE IF EXISTS mindeasedb;
 
 CREATE DATABASE mindeasedb;
 
-
 \c mindeasedb
 
-DROP TABLE IF EXISTS users;
+-- DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
@@ -23,19 +22,19 @@ CREATE TABLE users (
     appt_id integer
 );
 
-DROP TABLE IF EXISTS appointments;
+-- DROP TABLE IF EXISTS appointments;
 
 CREATE TABLE appointments (
   id SERIAL PRIMARY KEY,
   appt_date date,
   created_at date,
   appt_reason VARCHAR,
-  duration timestamp,
+  duration VARCHAR,
   location VARCHAR,
   is_taken boolean
 );
 
-DROP TABLE IF EXISTS doctors;
+-- DROP TABLE IF EXISTS doctors;
 
 CREATE TABLE doctors (
   id SERIAL PRIMARY KEY,
