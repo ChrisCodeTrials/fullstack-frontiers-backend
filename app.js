@@ -32,7 +32,7 @@ app.use('/api/users', userController)
 app.use('/api/auth', authController)
 app.use('/api/appointments', appointmentsController)
 
-// ROUTES
+// ROUTES 
 app.get('/', (req, res) => {
   res.send('Welcome to Basic Express Server')
 })
