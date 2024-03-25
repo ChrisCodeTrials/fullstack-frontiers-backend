@@ -12,4 +12,4 @@ quotes.delete("/:id", async (req, res) => {
   }
 });
 
-module.exports = { deleteQuote }
+module.exports = quotes
