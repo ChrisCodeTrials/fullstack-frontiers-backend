@@ -1,6 +1,6 @@
 const express = require("express");
 const appointments = express.Router();
-const { getAllAppointments, getAppointment, createAppointment, deleteAppointment, updateAppointment } = require('../queries/appointments');
+const { getAllAppointments, getAppointment, createAppointment, updateAppointment } = require('../queries/appointments');
 
 
 // INDEX
@@ -49,19 +49,5 @@ appointments.put("/:id", async (req, res) => {
   }
 });
 
-// DELETE
-appointments.delete("/:id", async (req, res) => {
-  const { id } = req.params;
-  try {
-    const deletedAppointment = await deleteAppointment(id);
-    if (deletedAppointment.id) {
-      res.status(200).json(deletedAppointment);
-    } else {
-      res.status(404).json({ error: 'Appointment not found' });
-    }
-  } catch (error) {
-    res.status(500).json({ error: 'Server error' });
-  }
-});
 
 module.exports = appointments;

@@ -30,18 +30,6 @@ const createAppointment = async (appointment) => {
   }
 };
 
-const deleteAppointment = async (id) => {
-  try {
-    const deletedAppointment = await db.one(
-      "DELETE FROM bookmarks WHERE id = $1 RETURNING *",
-      id
-    );
-    return deletedAppointment;
-  } catch (error) {
-    return error;
-  }
-};
-
 const updateAppointment = async (id, appointment) => {
   const { appt_date, appt_reason, duration, location, is_taken } = appointment;
   try {
@@ -55,4 +43,4 @@ const updateAppointment = async (id, appointment) => {
   }
 };
 
-module.exports = { getAllAppointments, getAppointment, createAppointment, deleteAppointment, updateAppointment }
+module.exports = { getAllAppointments, getAppointment, createAppointment,  updateAppointment }
