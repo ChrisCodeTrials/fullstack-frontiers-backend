@@ -11,3 +11,5 @@ quotes.delete("/:id", async (req, res) => {
     res.status(404).json("Quote not found");
   }
 });
+
+module.exports = { deleteQuote }
