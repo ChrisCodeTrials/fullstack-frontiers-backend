@@ -10,12 +10,12 @@ const getAllQuotes = async () => {
 };
 
 const getOneQuote = async (id) => {
-    try {
-      const oneQuote = await db.one('SELECT * FROM quotes WHERE id=$1', id)
-      return oneQuote
-    } catch (error) {
-      return error
-    }
+  try {
+    const oneQuote = await db.one('SELECT * FROM quotes WHERE id=$1', id)
+    return oneQuote
+  } catch (error) {
+    return error
+  }
 };
 
 const deleteQuote = async (id) => {
