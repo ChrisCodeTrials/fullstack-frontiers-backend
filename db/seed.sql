@@ -5,9 +5,9 @@
 INSERT INTO users (username, password_hash, email, created_at, updated_at)
 VALUES 
   ('demo', '$2b$10$.z68x3792U9LyBwmghfsKexstMO7i0SeNCoDmeJa7bEFPQBnZU3bK', 'demo@example.com', NOW(), NOW()),
-  ('user1', 'password_hash_1', 'user1@example.com', NOW(), NOW()),
-  ('user2', 'password_hash_2', 'user2@example.com', NOW(), NOW()),
-  ('user3', 'password_hash_3', 'user3@example.com', NOW(), NOW());
+  ('user1', '$2b$10$.KcekXylf/3oyrFnnZL2iu6LMQu4GpGQ7IuIxy/vRh30LrlcrA1yi', 'user1@example.com', NOW(), NOW()),
+  ('user2', '$2b$10$lfDbcwXFUH6wq9OzTJZI2.37J14/rt.DBq73b98jA9zwEVo3I3DnS', 'user2@example.com', NOW(), NOW()),
+  ('user3', '$2b$10$gUB2uL6s7MLOhn.RN.NzLOvDg2cqb2Tw4ukt0aHLBcJwzxOHlvW/6', 'user3@example.com', NOW(), NOW());
 
 -- Seed data for doctors
 INSERT INTO doctors (surname, gender, email, specialty)
