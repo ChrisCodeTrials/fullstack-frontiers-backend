@@ -21,4 +21,9 @@ db.connect()
   })
   .catch((error) => console.log('database connection error', error))
 
+
+// FOR DEPLOYED DB **comment this in for the deployed, and uncomment lines 4-22**
+// const connectionstring = process.env.CONNECTION_STRING
+// const db = pgp(connectionstring);
+
 module.exports = db;
