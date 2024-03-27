@@ -19,18 +19,18 @@ VALUES
   ('Dr. Garcia', 1, 'dr.garcia@example.com', 'Addiction Therapist');
 
 -- Seed data for appointments
-INSERT INTO appointments (appt_date, created_at, appt_reason, duration, location, is_taken)
+INSERT INTO appointments (appt_date, created_at, appt_reason, duration, location)
 VALUES 
-  ('2024-03-23', '2024-03-21', 'Cognitive Behavioral Therapy', '30 minutes', 'Manhattan', false),
-  ('2024-03-25', '2024-03-22', 'Psychoanalysis Session', '45 minutes', 'Brooklyn', false),
-  ('2024-03-26', '2024-03-22', 'Mindfulness Therapy', '20 minutes', 'Queens', false),
-  ('2024-03-28', '2024-03-23', 'Family Therapy', '60 minutes', 'Bronx', false),
-  ('2024-03-30', '2024-03-24', 'Group Therapy', '40 minutes', 'Staten Island', false),
-  ('2024-03-31', '2024-03-25', 'Art Therapy', '30 minutes', 'Manhattan', false),
-  ('2024-04-02', '2024-03-26', 'Interpersonal Therapy', '45 minutes', 'Brooklyn', false),
-  ('2024-04-03', '2024-03-27', 'Play Therapy', '50 minutes', 'Queens', false),
-  ('2024-04-05', '2024-03-28', 'Existential Therapy', '40 minutes', 'Bronx', false),
-  ('2024-04-06', '2024-03-29', 'Dialectical Behavior Therapy', '60 minutes', 'Staten Island', false);
+  ('2024-03-23', '2024-03-21', 'Cognitive Behavioral Therapy', '30 minutes', 'Manhattan'),
+  ('2024-03-25', '2024-03-22', 'Psychoanalysis Session', '45 minutes', 'Brooklyn'),
+  ('2024-03-26', '2024-03-22', 'Mindfulness Therapy', '20 minutes', 'Queens'),
+  ('2024-03-28', '2024-03-23', 'Family Therapy', '60 minutes', 'Bronx'),
+  ('2024-03-30', '2024-03-24', 'Group Therapy', '40 minutes', 'Staten Island'),
+  ('2024-03-31', '2024-03-25', 'Art Therapy', '30 minutes', 'Manhattan'),
+  ('2024-04-02', '2024-03-26', 'Interpersonal Therapy', '45 minutes', 'Brooklyn'),
+  ('2024-04-03', '2024-03-27', 'Play Therapy', '50 minutes', 'Queens'),
+  ('2024-04-05', '2024-03-28', 'Existential Therapy', '40 minutes', 'Bronx'),
+  ('2024-04-06', '2024-03-29', 'Dialectical Behavior Therapy', '60 minutes', 'Staten Island');
 
 INSERT INTO quotes (author, quote, category)
 VALUES

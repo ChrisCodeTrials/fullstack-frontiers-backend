@@ -21,8 +21,8 @@ const getAppointment = async (id) => {
 const createAppointment = async (appointment) => {
   try {
     const newAppointment = await db.one(
-      'INSERT INTO appointments (appt_date, created_at, appt_reason, duration, location, is_taken) VALUES($1, $2, $3, $4, $5, $6) RETURNING *',
-      [appointment.appt_date, appointment.created_at, appointment.appt_reason, appointment.duration, appointment.location, appointment.is_taken]
+      'INSERT INTO appointments (appt_date, created_at, appt_reason, duration, location) VALUES($1, $2, $3, $4, $5) RETURNING *',
+      [appointment.appt_date, appointment.created_at, appointment.appt_reason, appointment.duration, appointment.location]
     );
     return newAppointment;
   } catch (error) {
@@ -31,11 +31,11 @@ const createAppointment = async (appointment) => {
 };
 
 const updateAppointment = async (id, appointment) => {
-  const { appt_date, appt_reason, duration, location, is_taken } = appointment;
+  const { appt_date, appt_reason, duration, location } = appointment;
   try {
     const updatedAppointment = await db.one(
-      'UPDATE appointments SET appt_date=$1, appt_reason=$2, duration=$3, location=$4, is_taken=$5 WHERE id=$6 RETURNING *',
-      [appt_date, appt_reason, duration, location, is_taken, id]
+      'UPDATE appointments SET appt_date=$1, appt_reason=$2, duration=$3, location=$4  WHERE id=$5 RETURNING *',
+      [appt_date, appt_reason, duration, location, id]
     );
     return updatedAppointment;
   } catch (error) {

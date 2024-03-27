@@ -19,7 +19,6 @@ CREATE TABLE users (
   dob VARCHAR,
   preferred_name VARCHAR,
   surname VARCHAR,
-  appt_id integer
 );
 
 -- DROP TABLE IF EXISTS appointments;
@@ -31,7 +30,7 @@ CREATE TABLE appointments (
   appt_reason VARCHAR,
   duration VARCHAR,
   location VARCHAR,
-  is_taken boolean
+  user_id integer
 );
 
 -- DROP TABLE IF EXISTS doctors;
