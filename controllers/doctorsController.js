@@ -1,15 +1,26 @@
 const express = require("express");
-const doctors = express.Router();
+const doctors = express.Router({mergeParams:true});
 const { getAllDoctors, getOneDoctor } = require('../queries/doctors');
+const { getAppointment } = require("../queries/appointments");
 
 
 // INDEX
-doctors.get('/', async (_req, res) => {
-  try {
-    const allDoctors = await getAllDoctors();
-    res.status(200).json(allDoctors);
-  } catch (error) {
-    res.status(500).json({ error: 'Server error' });
+doctors.get('/', async (req, res) => {
+  const { appt_id } = req.params
+
+  if(appt_id){
+    const appointment = await getAppointment(appt_id)
+    const doctors = await getAllDoctors(appt_id)
+    const response = {...appointment, doctors}
+    res.status(200).json(response)
+  }else{
+    try {
+      const allDoctors = await getAllDoctors();
+      res.status(200).json(allDoctors);
+    } catch (error) {
+      res.status(500).json({ error: 'Server error' });
+    }
+
   }
 });
 

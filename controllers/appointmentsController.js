@@ -1,8 +1,10 @@
 const express = require("express");
 const appointments = express.Router();
 const { getAllAppointments, getAppointment, createAppointment, updateAppointment } = require('../queries/appointments');
+const doctorsController = require("./doctorsController")
 
 
+appointments.use("/:appt_id/doctors", doctorsController)
 // INDEX
 appointments.get('/', async (_req, res) => {
   try {
@@ -12,6 +14,7 @@ appointments.get('/', async (_req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 });
+
 
 // SHOW
 appointments.get('/:id', async (req, res) => {

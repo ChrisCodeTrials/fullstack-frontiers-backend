@@ -1,12 +1,18 @@
 const db = require('../db/dbConfig.js')
 
 
-const getAllDoctors = async () => {
-  try {
-    const allDoctors = await db.any('SELECT * FROM doctors')
+const getAllDoctors = async (appt_id) => {
+  if(appt_id){
+    const allDoctors = await db.any('SELECT * FROM doctors WHERE appt_id=$1', appt_id)
     return allDoctors
-  } catch (error) {
-      return error
+  }else{
+    try {
+      console.log(appt_id)
+      const allDoctors = await db.any('SELECT * FROM doctors')
+      return allDoctors
+    } catch (error) {
+        return error
+    }
   }
 };
 

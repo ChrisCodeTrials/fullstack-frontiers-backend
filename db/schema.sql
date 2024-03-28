@@ -18,7 +18,7 @@ CREATE TABLE users (
   gender VARCHAR,
   dob VARCHAR,
   preferred_name VARCHAR,
-  surname VARCHAR,
+  surname VARCHAR
 );
 
 -- DROP TABLE IF EXISTS appointments;
