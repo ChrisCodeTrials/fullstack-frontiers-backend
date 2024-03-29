@@ -1,6 +1,6 @@
 const express = require("express");
 const doctors = express.Router({mergeParams:true});
-const { getAllDoctors, getOneDoctor } = require('../queries/doctors');
+const { getAllDoctors, getOneDoctor, updateDoctor } = require('../queries/doctors');
 const { getAppointment } = require("../queries/appointments");
 
 
@@ -36,6 +36,16 @@ doctors.get('/:id', async (req, res) => {
     }
   } catch (error) {
     res.status(500).json({ error: 'Server error' });
+  }
+});
+
+doctors.put("/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    const updatedDoctor = await updateDoctor(id, req.body);
+    res.status(200).json(updatedDoctor);
+  } catch (error) {
+    res.status(400).json({ error });
   }
 });
 

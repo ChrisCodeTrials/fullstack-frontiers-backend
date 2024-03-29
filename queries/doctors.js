@@ -24,4 +24,16 @@ const getOneDoctor = async (id) => {
     }
 };
 
-module.exports = {getAllDoctors, getOneDoctor}
+const updateDoctor = async (id, doctor) => {
+  const { appt_id} = doctor
+  try {
+    const updatedDoctor = await db.one(
+      'UPDATE doctors SET appt_id=$1 WHERE id=$2 RETURNING *',
+      [appt_id, id]
+    );
+    return updatedDoctor;
+  } catch (error) {
+    return error;
+  }
+};
+module.exports = {getAllDoctors, getOneDoctor, updateDoctor}
