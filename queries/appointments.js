@@ -31,11 +31,11 @@ const createAppointment = async (appointment) => {
 };
 
 const updateAppointment = async (id, appointment) => {
-  const { appt_date, appt_reason, duration, location } = appointment;
+  const { appt_date, appt_reason, duration, location, user_id } = appointment;
   try {
     const updatedAppointment = await db.one(
-      'UPDATE appointments SET appt_date=$1, appt_reason=$2, duration=$3, location=$4  WHERE id=$5 RETURNING *',
-      [appt_date, appt_reason, duration, location, id]
+      'UPDATE appointments SET appt_date=$1, appt_reason=$2, duration=$3, location=$4, user_id=$5  WHERE id=$6 RETURNING *',
+      [appt_date, appt_reason, duration, location, user_id, id]
     );
     return updatedAppointment;
   } catch (error) {

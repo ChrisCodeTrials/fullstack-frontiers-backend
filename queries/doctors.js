@@ -7,7 +7,6 @@ const getAllDoctors = async (appt_id) => {
     return allDoctors
   }else{
     try {
-      console.log(appt_id)
       const allDoctors = await db.any('SELECT * FROM doctors')
       return allDoctors
     } catch (error) {
